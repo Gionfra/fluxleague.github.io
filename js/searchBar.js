@@ -4,6 +4,9 @@ const suggestions = document.getElementById("suggestions");
 
 let players = [];
 
+// Definisci il base path del repo GitHub Pages
+const repoBase = "/fluxleague/"; // metti il nome del tuo repo
+
 // Carica i dati dei player
 fetch("./data/players.json")
     .then(res => res.json())
@@ -27,7 +30,8 @@ searchInput.addEventListener("input", () => {
         const li = document.createElement("li");
         li.textContent = p.name;
         li.addEventListener("click", () => {
-            window.location.href = p.profile;
+            // aggiungi repoBase davanti al profilo
+            window.location.href = repoBase + p.profile;
             suggestions.style.display = "none";
         });
         suggestions.appendChild(li);
@@ -42,7 +46,7 @@ function searchPlayer() {
     const found = players.find(p => p.name.toLowerCase() === value);
 
     if (found) {
-        window.location.href = found.profile;
+        window.location.href = repoBase + found.profile; // aggiungi repoBase
     } else {
         alert("Player not found");
     }
