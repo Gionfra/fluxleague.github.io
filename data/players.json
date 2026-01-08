@@ -23,12 +23,6 @@
             "wins":0,
             "podiums": 0,
             "profile": "players/Charlie.html"
-        },
-        {
-            "name":"Lunar",
-            "wins":999,
-            "podiums": 999,
-            "profile": "players/Lunar.html"
         }
     ]
 }
